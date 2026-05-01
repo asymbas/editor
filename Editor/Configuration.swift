@@ -71,7 +71,7 @@ extension Configuration {
                                 types: configuration.types,
                                 schema: configuration.schema,
                                 url: .temporaryDirectory.appending(component: configuration.id),
-                                options: [.eraseDatabaseOnSetup],
+                                options: [],
                                 attachment: configuration.observer
                             )
                         ]

@@ -68,7 +68,7 @@ struct ReferenceGraphView: View {
                 ProgressView()
                     .task(priority: .high) { @DatabaseActor in
                         if let manager = self.database.stores.first?.value.manager {
-                            let identifiers = Array(manager.editingStates.withLock { $0.keys })
+                            let identifiers = Array(manager.persistentIdentifiers)
                             let roots = identifiers.prefix(1)
                             await MainActor.run {
                                 self.identifiers = identifiers

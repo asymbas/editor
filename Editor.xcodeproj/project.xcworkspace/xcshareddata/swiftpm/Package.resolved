@@ -1,13 +1,13 @@
 {
-  "originHash" : "33e03285d73c46d30383f03037582e95efecb1b643ea237a5461a4ba426405ba",
+  "originHash" : "d2b6ca14dcbef6d87004e451d6e5793a502d607b2f94e2f5ce67c27d96aee1c3",
   "pins" : [
     {
       "identity" : "datastorekit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/asymbas/datastorekit.git",
       "state" : {
-        "revision" : "54a40cb3b955a4908665654497dfa5b257d1fe5f",
-        "version" : "0.0.1"
+        "branch" : "main",
+        "revision" : "177f77ab7fae8941884c4ffe0469ebc3fc87a5d2"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-async-algorithms",
       "state" : {
-        "revision" : "9d349bcc328ac3c31ce40e746b5882742a0d1272",
-        "version" : "1.1.3"
+        "revision" : "da4e36f86544cdf733a40d59b3a2267e3a7bbf36",
+        "version" : "1.0.0"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",
       "state" : {
-        "revision" : "bbd81b6725ae874c69e9b8c8804d462356b55523",
-        "version" : "1.10.1"
+        "revision" : "b1fa4ef41fe21b13120c034854042d12c43f66b2",
+        "version" : "1.7.1"
       }
     }
   ],

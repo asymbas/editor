@@ -69,6 +69,7 @@ struct Application: App {
                     if !label.split(separator: ".").contains("datastorekit") {
                         handler.logLevel = .critical
                     }
+                    handler.logLevel = .notice
                     return handler
                 }()
             ])

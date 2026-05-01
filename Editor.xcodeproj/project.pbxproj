@@ -13,7 +13,6 @@
 		FD20A79C2F619FEF00EB82A9 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = FD20A79B2F619FEF00EB82A9 /* Collections */; };
 		FD20A79F2F61AF9B00EB82A9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FD20A79E2F61AF9B00EB82A9 /* LICENSE */; };
 		FD6B91DF2F60E1160065036C /* DataStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD6B91DE2F60E1160065036C /* DataStoreKit */; };
-		FD6B91E52F61205E0065036C /* InMemoryLogging in Frameworks */ = {isa = PBXBuildFile; productRef = FD6B91E42F61205E0065036C /* InMemoryLogging */; };
 		FD6B91E72F61205E0065036C /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = FD6B91E62F61205E0065036C /* Logging */; };
 		FD6B91EA2F6122A20065036C /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FD6B91E92F6122A20065036C /* BitCollections */; };
 		FD6B91EC2F6122A20065036C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = FD6B91EB2F6122A20065036C /* Collections */; };
@@ -130,7 +129,6 @@
 				FD6B91EC2F6122A20065036C /* Collections in Frameworks */,
 				FD6B91F02F6122A20065036C /* HashTreeCollections in Frameworks */,
 				FD20A7832F619C8200EB82A9 /* Shared.framework in Frameworks */,
-				FD6B91E52F61205E0065036C /* InMemoryLogging in Frameworks */,
 				FD6B91DF2F60E1160065036C /* DataStoreKit in Frameworks */,
 				FD6B91F22F6122A20065036C /* HeapModule in Frameworks */,
 				FDEB5DC52F629BFC00C5F4C4 /* DataStoreKit in Frameworks */,
@@ -227,7 +225,6 @@
 			name = Editor;
 			packageProductDependencies = (
 				FD6B91DE2F60E1160065036C /* DataStoreKit */,
-				FD6B91E42F61205E0065036C /* InMemoryLogging */,
 				FD6B91E62F61205E0065036C /* Logging */,
 				FD6B91E92F6122A20065036C /* BitCollections */,
 				FD6B91EB2F6122A20065036C /* Collections */,
@@ -673,15 +670,17 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.1;
+				kind = versionRange;
+				maximumVersion = 1.9.0;
+				minimumVersion = 1.6.4;
 			};
 		};
 		FD6B91E82F6122A20065036C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = versionRange;
+				maximumVersion = 1.3.0;
 				minimumVersion = 1.2.0;
 			};
 		};
@@ -689,16 +688,17 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.3;
+				kind = versionRange;
+				maximumVersion = 1.0.1;
+				minimumVersion = 1.0.0;
 			};
 		};
 		FDEB5DC32F629BFC00C5F4C4 /* XCRemoteSwiftPackageReference "datastorekit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/asymbas/datastorekit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -717,11 +717,6 @@
 		FD6B91DE2F60E1160065036C /* DataStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataStoreKit;
-		};
-		FD6B91E42F61205E0065036C /* InMemoryLogging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD6B91E32F61205E0065036C /* XCRemoteSwiftPackageReference "swift-log" */;
-			productName = InMemoryLogging;
 		};
 		FD6B91E62F61205E0065036C /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;

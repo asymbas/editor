@@ -191,17 +191,19 @@ extension Database {
         }
     }
     
-    func snapshot(for persistentIdentifier: PersistentIdentifier)
-    async throws -> DatabaseSnapshotSet? {
+    func snapshot(for persistentIdentifier: PersistentIdentifier) async throws -> DatabaseSnapshotSet? {
         var relatedSnapshots: [PersistentIdentifier: DatabaseSnapshot] = .init()
         return try await withDataStore(identifier: persistentIdentifier.storeIdentifier) { store in
             let primaryKey = persistentIdentifier.primaryKey()
             let result = try store.queue.reader { connection in
-                try connection.fetch {
-                    "SELECT * FROM \(quote(persistentIdentifier.entityName))"
-                    Where("\(quote("pk")) = ?", bindings: primaryKey)
-                    Limit(1)
-                }
+                try connection.fetch(
+                    """
+                    SELECT * FROM "\(persistentIdentifier.entityName)"
+                    WHERE "pk" = ?
+                    LIMIT 1
+                    """,
+                    bindings: primaryKey
+                )
             }
             guard let row = result.first else {
                 throw Error.modelNotFound
@@ -213,7 +215,6 @@ extension Database {
             let values = row
             let snapshot = try DatabaseSnapshot(
                 store: store,
-                registry: store.manager.registry(for: self.modelContext.editingState),
                 properties: .init(properties),
                 values: .init(values),
                 relatedSnapshots: &relatedSnapshots

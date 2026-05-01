@@ -13,16 +13,16 @@ import SQLiteStatement
 import SwiftUI
 
 struct ResultBuilderView: View {
-    @SQLBuilder private var sql: [any SQLFragment] {
-        SQL {
-            ""
+//    @SQLBuilder private var sql: [any SQLFragment] {
+//        SQL {
+//            ""
 //            _Select()
 //            _From("Main \(as: "alias")")
 //            _Join("Table") { table in
 //                ("alias" as _SQLTable).column("pk") == table.column("pk")
 //            }
-        }.sql
-    }
+//        }.sql
+//    }
     
     var body: some View {
         EmptyView()

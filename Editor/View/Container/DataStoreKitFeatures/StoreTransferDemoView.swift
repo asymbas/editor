@@ -56,7 +56,7 @@ struct StoreTransferDemoView: View {
                         func save<T: PersistentModel>(
                             _ model: T
                         ) throws {
-                            let request = DatabaseSaveChangesRequest<T, DatabaseSnapshot, DatabaseEditingState>(
+                            let request = DatabaseSaveChangesRequest<DatabaseSnapshot, DatabaseEditingState>(
                                 editingState: DatabaseEditingState(),
                                 inserted: [snapshot],
                                 updated: [],
@@ -64,7 +64,7 @@ struct StoreTransferDemoView: View {
                             )
                             if let store = configuration.store {
                                 do {
-                                    let result: DatabaseSaveChangesResult<T, DatabaseSnapshot> = try store.save(request)
+                                    let result: DatabaseSaveChangesResult<DatabaseSnapshot> = try store.save(request)
                                     Banner(.ok, "Successful") {
                                         "Inserted into another store: \(result)"
                                     }

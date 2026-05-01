@@ -70,7 +70,7 @@ struct DatabaseRecordView: View {
                     property: property,
                     value: Binding(
                         get: { snapshot.values[index] },
-                        set: { snapshot.values[index] = $0 }
+                        set: { snapshot.setValue($0, at: index) }
                     )
                 ) {
                     VStack {

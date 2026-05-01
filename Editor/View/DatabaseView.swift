@@ -248,27 +248,27 @@ struct DatabaseView: View {
                             }
                         }
                     }
-                    Button("Create Snapshot") {
-                        if let model = try? modelContext.fetch(all: User.self).first {
-                            let snapshot = DatabaseSnapshot(model)
-                            var relatedSnapshots = [PersistentIdentifier: DatabaseSnapshot]()
-                            var remappedIdentifiers = [PersistentIdentifier: PersistentIdentifier]()
-                            let newModel = try! User(
-                                snapshot,
-                                relatedSnapshots: &relatedSnapshots,
-                                remappedIdentifiers: &remappedIdentifiers,
-                                modelContext: modelContext
-                            )
-                            modelContext.insert(newModel)
-                            Banner("Done") {
-                                """
-                                Created a snapshot from model and reinitialized.
-                                Completed: \(newModel)
-                                """
-                            }
-                            try? modelContext.save()
-                        }
-                    }
+//                    Button("Create Snapshot") {
+//                        if let model = try? modelContext.fetch(all: User.self).first {
+//                            let snapshot = DatabaseSnapshot(model)
+//                            var relatedSnapshots = [PersistentIdentifier: DatabaseSnapshot]()
+//                            var remappedIdentifiers = [PersistentIdentifier: PersistentIdentifier]()
+//                            let newModel = try! User(
+//                                snapshot,
+//                                relatedSnapshots: &relatedSnapshots,
+//                                remappedIdentifiers: &remappedIdentifiers,
+//                                modelContext: modelContext
+//                            )
+//                            modelContext.insert(newModel)
+//                            Banner("Done") {
+//                                """
+//                                Created a snapshot from model and reinitialized.
+//                                Completed: \(newModel)
+//                                """
+//                            }
+//                            try? modelContext.save()
+//                        }
+//                    }
                 }
                 .scrollTargetLayout()
                 .fontWeight(.semibold)

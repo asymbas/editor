@@ -90,28 +90,4 @@ struct TestButton<T, Label>: View where Label: View {
             }
         }
     }
-    
-//    enum Status: String, Hashable {
-//        case idle
-//        case running
-//        case success
-//        case failure
-//        
-//        var systemImage: String {
-//            switch self {
-//            case .idle: "pause.circle"
-//            case .running: "arrow.triangle.2.circlepath"
-//            case .success: "checkmark.circle.fill"
-//            case .failure: "xmark.octagon.fill"
-//            }
-//        }
-//        
-//        var color: Color {
-//            switch self {
-//            case .idle: .accentColor
-//            case .running: .gray
-//            case .success: .green
-//            case .failure: .red
-//            }
-//        }
 }

@@ -189,11 +189,9 @@ struct SchemaMultiSelectorView: View {
             Database(
                 schema: schema,
                 configurations: [
-                    DatabaseConfiguration(
-                        transient: (),
+                    DatabaseConfiguration.transient(
                         types: schema.types,
                         schema: schema,
-                        allowsSave: true,
                         options: [],
                         attachment: configuration.observer
                     )
